@@ -1,0 +1,1 @@
+Create a beautiful, mobile-responsive stock dashboard application. I want it to display stock information including prices, percentage changes, and key metrics. Make it look professional with a modern design that works well on both desktop and mobile devices. Use React for the frontend and include some sample stock data to demonstrate the functionality.

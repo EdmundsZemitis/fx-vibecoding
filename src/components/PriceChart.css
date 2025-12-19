@@ -1,0 +1,127 @@
+.price-chart {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.chart-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.chart-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.chart-svg-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.price-line {
+  filter: drop-shadow(0 2px 4px rgba(34, 197, 94, 0.3));
+  animation: drawLine 2s ease-in-out;
+}
+
+.price-point {
+  transition: r 0.2s ease;
+  cursor: pointer;
+}
+
+.price-point:hover {
+  r: 3;
+  filter: drop-shadow(0 0 6px rgba(34, 197, 94, 0.8));
+}
+
+.date-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+@keyframes drawLine {
+  0% {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .price-chart {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .chart-title {
+    font-size: 1.2rem;
+  }
+  
+  .chart-svg-container {
+    height: 160px;
+  }
+  
+  .price-labels {
+    font-size: 0.8rem;
+  }
+  
+  .date-labels {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .price-chart {
+    padding: 16px;
+  }
+  
+  .chart-title {
+    font-size: 1.1rem;
+  }
+  
+  .chart-svg-container {
+    height: 140px;
+  }
+  
+  .price-labels,
+  .date-labels {
+    font-size: 0.7rem;
+  }
+}

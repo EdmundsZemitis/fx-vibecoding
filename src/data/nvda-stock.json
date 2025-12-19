@@ -1,0 +1,38 @@
+{
+  "symbol": "NVDA",
+  "companyName": "NVIDIA Corporation",
+  "currentPrice": 875.32,
+  "previousClose": 862.15,
+  "openPrice": 868.50,
+  "dayHigh": 881.75,
+  "dayLow": 865.20,
+  "volume": 18450000,
+  "marketCap": "2.15T",
+  "peRatio": 65.8,
+  "eps": 13.31,
+  "beta": 1.68,
+  "dividendYield": 0.12,
+  "fiftyTwoWeekHigh": 974.00,
+  "fiftyTwoWeekLow": 394.75,
+  "changeAmount": 13.17,
+  "changePercent": 1.53,
+  "lastUpdated": "2024-12-19T16:00:00Z",
+  "priceHistory": [
+    { "date": "2024-12-12", "price": 845.30 },
+    { "date": "2024-12-13", "price": 852.70 },
+    { "date": "2024-12-14", "price": 847.20 },
+    { "date": "2024-12-15", "price": 856.80 },
+    { "date": "2024-12-16", "price": 862.15 },
+    { "date": "2024-12-17", "price": 871.40 },
+    { "date": "2024-12-18", "price": 867.90 },
+    { "date": "2024-12-19", "price": 875.32 }
+  ],
+  "keyMetrics": {
+    "revenue": "79.77B",
+    "grossMargin": "75.0%",
+    "operatingMargin": "32.5%",
+    "netMargin": "28.1%",
+    "roiPercent": 25.8,
+    "debtToEquity": 0.16
+  }
+}

@@ -1,0 +1,194 @@
+.stock-card {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stock-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4), 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+}
+
+.stock-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.stock-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.company-name {
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.market-cap {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.market-cap-label {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.market-cap-value {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.price-section {
+  margin-bottom: 30px;
+}
+
+.current-price {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.price-change {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.price-change.positive {
+  color: #22c55e;
+}
+
+.price-change.negative {
+  color: #ef4444;
+}
+
+.stock-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.2s ease;
+}
+
+.detail-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.detail-label {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.detail-value {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .stock-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .stock-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .market-cap {
+    text-align: left;
+  }
+  
+  .stock-title h2 {
+    font-size: 1.7rem;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+  }
+  
+  .price-change {
+    font-size: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .detail-item {
+    padding: 12px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stock-card {
+    padding: 16px;
+  }
+  
+  .stock-title h2 {
+    font-size: 1.5rem;
+  }
+  
+  .price {
+    font-size: 2.2rem;
+  }
+  
+  .price-change {
+    gap: 8px;
+  }
+  
+  .detail-item {
+    padding: 10px 14px;
+  }
+  
+  .detail-label,
+  .detail-value {
+    font-size: 0.85rem;
+  }
+}
