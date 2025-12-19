@@ -1,0 +1,306 @@
+.bar-chart {
+  background: linear-gradient(145deg, #1e293b, #334155);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s ease;
+}
+
+.bar-chart:hover {
+  transform: translateY(-2px);
+}
+
+.chart-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.chart-container {
+  position: relative;
+  height: 200px;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.volume-label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  margin-right: 15px;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: 40px;
+}
+
+.bars-container {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 100%;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.bars-container.comparison-mode {
+  justify-content: center;
+  gap: 60px;
+}
+
+.bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bar-wrapper.comparison-bar {
+  flex: 0 0 120px;
+  max-width: 120px;
+}
+
+.bar-container {
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 4px;
+  animation: barGrow 1s ease-out;
+}
+
+.bar.normal-volume {
+  background: linear-gradient(180deg, #3b82f6 0%, #1e40af 100%);
+}
+
+.bar.high-volume {
+  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+}
+
+.bar.above-average {
+  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+}
+
+.bar.below-average {
+  background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+}
+
+.bar.average-volume {
+  background: linear-gradient(180deg, #64748b 0%, #475569 100%);
+}
+
+.bar:hover {
+  transform: scaleY(1.05);
+  filter: brightness(1.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bar-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+  border-radius: inherit;
+}
+
+.bar-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.bar-date {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.bar-title {
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bar-volume {
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.chart-grid {
+  position: absolute;
+  top: 0;
+  left: 55px;
+  right: 0;
+  height: 100%;
+  pointer-events: none;
+}
+
+.grid-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.grid-25 { bottom: 75%; }
+.grid-50 { bottom: 50%; }
+.grid-75 { bottom: 25%; }
+.grid-100 { bottom: 0%; }
+
+.chart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.volume-comparison {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.comparison-indicator {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.comparison-indicator.positive {
+  color: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+}
+
+.comparison-indicator.negative {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.comparison-text {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.chart-info {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+@keyframes barGrow {
+  0% {
+    transform: scaleY(0);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  .bar-chart {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  
+  .chart-title {
+    font-size: 1.2rem;
+  }
+  
+  .chart-container {
+    height: 160px;
+  }
+  
+  .volume-label {
+    width: 35px;
+    margin-right: 12px;
+    font-size: 0.7rem;
+  }
+  
+  .bars-container {
+    gap: 6px;
+  }
+  
+  .bar-date {
+    font-size: 0.65rem;
+  }
+  
+  .bar-volume {
+    font-size: 0.7rem;
+  }
+  
+  .chart-info {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar-chart {
+    padding: 16px;
+  }
+  
+  .chart-title {
+    font-size: 1.1rem;
+  }
+  
+  .chart-container {
+    height: 140px;
+  }
+  
+  .volume-label {
+    width: 30px;
+    margin-right: 10px;
+    font-size: 0.65rem;
+  }
+  
+  .bars-container {
+    gap: 4px;
+  }
+  
+  .bar-date,
+  .bar-volume {
+    font-size: 0.6rem;
+  }
+  
+  .chart-info {
+    font-size: 0.75rem;
+  }
+  
+  .chart-footer {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}

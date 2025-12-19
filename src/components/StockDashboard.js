@@ -3,6 +3,7 @@ import nvdaData from '../data/nvda-stock.json';
 import StockCard from './StockCard';
 import StockMetrics from './StockMetrics';
 import PriceChart from './PriceChart';
+import BarChart from './BarChart';
 import './StockDashboard.css';
 
 const StockDashboard = () => {
@@ -38,6 +39,7 @@ const StockDashboard = () => {
       <div className="dashboard-content">
         <div className="main-section">
           <StockCard stockData={stockData} />
+          <BarChart stockData={stockData} />
           <PriceChart priceHistory={stockData.priceHistory} />
         </div>
         
